@@ -1,0 +1,29 @@
+
+body {
+    background-image: url("./Quockhanh.jpg"); 
+    background-size: cover;
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    color: blue;
+    font-style: italic;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial;
+    font-size: 16pt;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    color: white; 
+}
+
+a {
+    color: red;
+    text-decoration: none; 
+}
+
+
+p {
+    margin-bottom: 20px;
+}
