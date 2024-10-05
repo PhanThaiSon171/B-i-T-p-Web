@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web mô phỏng máy tính </title>
+</head>
+<style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+    width: 320px;
+}
+
+.display {
+    background-color: #444;
+    color: #fff;
+    font-size: 2em;
+    text-align: right;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    min-height: 50px;
+    overflow-x: auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.number {
+    background-color: #333;
+    color: #fff;
+}
+
+.operator {
+    background-color: #ff9500;
+    color: #fff;
+}
+
+.equals {
+    background-color: #1e90ff;
+    color: #fff;
+    grid-column: span 1;
+    height: 100%;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.decimal {
+    background-color: #333;
+    color: #fff;
+}
+
+</style>
+<body>
+
+    <div class="calculator">
+        <div id="display" class="display">0</div>
+        <div class="buttons">
+            <button class="btn operator" id="clear">C</button>
+            <button class="btn operator" id="divide">÷</button>
+            <button class="btn operator" id="multiply">×</button>
+            <button class="btn operator" id="subtract">-</button>
+
+            <button class="btn number">7</button>
+            <button class="btn number">8</button>
+            <button class="btn number">9</button>
+            <button class="btn operator" id="add">+</button>
+
+            <button class="btn number">4</button>
+            <button class="btn number">5</button>
+            <button class="btn number">6</button>
+            <button class="btn equals" id="equals">=</button>
+
+            <button class="btn number">1</button>
+            <button class="btn number">2</button>
+            <button class="btn number">3</button>
+            <button class="btn number zero">0</button>
+            <button class="btn decimal">.</button>
+        </div>
+    </div>
+    <script src="./maytinh.js"></script>
+    <h1><a href="./index.html">Tính toán đơn giản</a></h1>
+</body>
+</html>

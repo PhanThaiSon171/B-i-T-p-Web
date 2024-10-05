@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính toán đơn giản</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, select, button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
+        button {
+            width: 220px;
+            cursor: pointer;
+        }
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Máy tính 4 phép tính</h1>
+
+    <input type="number" id="num1" placeholder="Số thứ nhất">
+    <br>
+    <input type="number" id="num2" placeholder="Số thứ hai">
+    <br>
+    
+    <select id="operator">
+        <option value="+">Cộng (+)</option>
+        <option value="-">Trừ (-)</option>
+        <option value="*">Nhân (*)</option>
+        <option value="/">Chia (/)</option>
+    </select>
+    <br>
+    
+    <button onclick="calculate()">Tính toán</button>
+
+    <div id="result">Kết quả: <span>0</span></div>
+
+    <script>
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operator = document.getElementById('operator').value;
+            let result = 0;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert('Vui lòng nhập số hợp lệ!');
+                return;
+            }
+
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 === 0) {
+                        alert('Không thể chia cho 0');
+                        return;
+                    }
+                    result = num1 / num2;
+                    break;
+                default:
+                    alert('Phép toán không hợp lệ!');
+                    return;
+            }
+
+            document.getElementById('result').innerHTML = `Kết quả: <span>${result}</span>`;
+        }
+    </script>
+    <a href="./caculator.html">Máy tính caculator đơn giản</a>
+</body>
+</html>
