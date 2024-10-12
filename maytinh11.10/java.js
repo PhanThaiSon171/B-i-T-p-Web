@@ -1,5 +1,3 @@
-// script.js
-
 const calculator = {
     displayValue: '0',
     firstOperand: null,
