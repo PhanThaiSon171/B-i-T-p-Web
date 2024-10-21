@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thao Tác với Nội Dung</title>
+    <style>
+        #NoiDung {
+            width: 300px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .TieuDe {
+            font-size: 24px;
+            font-weight: bold;
+            color: blue;
+        }
+        .NoiDungCSS {
+            font-size: 18px;
+            font-style: italic;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h2>JAVASCRIPT và CSS</h2>
+
+<button onclick="doiMau('green')">Xanh</button>
+<button onclick="doiMau('red')">Đỏ</button>
+<button onclick="doiMau('yellow')">Vàng</button>
+<button onclick="doiMau('')">Không màu</button>
+
+<br><br>
+
+<select id="cboCoChu">
+    <option value="10px">10px</option>
+    <option value="20px">20px</option>
+    <option value="30px">30px</option>
+</select>
+<button onclick="CoChu()">Đặt cỡ chữ</button>
+
+<br><br>
+
+<select id="cboDoCao">
+    <option value="100px">100px</option>
+    <option value="150px">150px</option>
+    <option value="200px">200px</option>
+</select>
+<button onclick="DoCao()">Đặt chiều cao</button>
+<button onclick="TangDoCao()">Tăng chiều cao</button>
+
+<br><br>
+
+<button onclick="NapTieuDe()">Nạp css tiêu đề</button>
+<button onclick="NapNoiDung()">Nạp css nội dung</button>
+
+<br><br>
+
+<div id="NoiDung">#NoiDung: Xin chào các bạn!</div>
+
+<script>
+    var NoiDung = document.getElementById('NoiDung');
+
+    function doiMau(mau) {
+        NoiDung.style.backgroundColor = mau;
+    }
+
+    function CoChu() {
+        NoiDung.style.fontSize = document.getElementById('cboCoChu').value;
+    }
+
+    function DoCao() {
+        NoiDung.style.height = document.getElementById('cboDoCao').value;
+    }
+
+    function TangDoCao() {
+        var Cao = NoiDung.style.height;
+        Cao = Cao.substring(0, Cao.length - 2); 
+        Cao = parseInt(Cao) + 50; 
+        NoiDung.style.height = Cao + 'px';
+    }
+
+    function NapTieuDe() {
+        NoiDung.className = "TieuDe"; 
+    }
+
+    function NapNoiDung() {
+        NoiDung.className = "NoiDungCSS"; 
+    }
+</script>
+
+</body>
+</html>
