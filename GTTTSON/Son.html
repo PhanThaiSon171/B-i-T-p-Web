@@ -74,26 +74,17 @@
             text-align: center;
             margin: 20px 0;
         }
-        .link-section {
-            text-align: center;
-            margin-top: 20px;
+        .social-links a {
+            color: white; /* Màu chữ cho các liên kết */
+             text-decoration: none; /* Bỏ gạch chân */
+            font-weight: bold; /* In đậm chữ */
+             margin: 0 5px; /* Khoảng cách giữa các liên kết */
         }
-        .link-section a, .btn {
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-            border: 1px solid white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            display: inline-block;
-            margin: 10px;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
+
+        .social-links a:hover {
+            text-decoration: underline; /* Gạch chân khi di chuột qua */
         }
-        .link-section a:hover, .btn:hover {
-            background-color: white;
-            color: black;
-        }
+
 
         /* Nút chuyển đổi chế độ */
         .toggle-theme, .toggle-background {
@@ -200,7 +191,12 @@
         </div>
 
         <div class="link-section">
-            <a href="https://www.facebook.com/son.phanthai.988?mibextid=JRoKGi" target="_blank">Liên hệ với tôi</a>
+            <div class="social-links">
+                <a href="https://www.facebook.com/son.phanthai.988?mibextid=JRoKGi" target="_blank">Facebook</a> |
+                <a href="https://www.instagram.com/son.inzal?igsh=czZxeXl5eDM2aGxl" target="_blank">Instagram</a> |
+                <a href="https://www.tiktok.com/@sonphanthai40" target="_blank">TikTok</a>
+            </div>
+            
         </div>
 
         <!-- Phần bình luận -->
