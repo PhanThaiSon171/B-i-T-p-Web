@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông Tin Cá Nhân</title>
     <style>
-        /* Các thiết lập cơ bản */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -75,18 +74,16 @@
             margin: 20px 0;
         }
         .social-links a {
-            color: white; /* Màu chữ cho các liên kết */
-             text-decoration: none; /* Bỏ gạch chân */
-            font-weight: bold; /* In đậm chữ */
-             margin: 0 5px; /* Khoảng cách giữa các liên kết */
+            color: white; 
+             text-decoration: none; 
+            font-weight: bold; 
+             margin: 0 5px; 
         }
-
         .social-links a:hover {
-            text-decoration: underline; /* Gạch chân khi di chuột qua */
+            text-decoration: underline; 
         }
 
 
-        /* Nút chuyển đổi chế độ */
         .toggle-theme, .toggle-background {
             position: fixed;
             padding: 10px;
@@ -110,7 +107,6 @@
             color: black;
         }
 
-        /* Hiệu ứng tuyết rơi */
         .snowflake {
             position: fixed;
             top: -10px;
@@ -127,7 +123,6 @@
             }
         }
 
-        /* Phần bình luận */
         .comment-section {
             margin-top: 20px;
             width: 80%;
@@ -161,13 +156,10 @@
     </style>
 </head>
 <body>
-    <!-- Nút chuyển đổi chế độ -->
     <button class="toggle-theme" id="toggleTheme">Chế độ tối</button>
     <button class="toggle-background" id="toggleBackground">Đổi hình nền</button>
 
-    <!-- Đồng hồ thời gian thực -->
     <div class="clock-container" id="clock">00:00:00</div>
-    <!-- Đồng hồ đếm ngược sinh nhật sắp tới -->
     <div class="countdown-container" id="countdown">Sinh nhật sắp tới: 00d 00h 00m 00s</div>
 
     <div class="container">
@@ -199,7 +191,6 @@
             
         </div>
 
-        <!-- Phần bình luận -->
         <div class="comment-section">
             <h2>Bình luận</h2>
             <textarea id="commentInput" placeholder="Nhập bình luận của bạn..."></textarea>
@@ -208,9 +199,7 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
     <script>
-        // Chế độ tối/sáng
         let isDarkMode = false;
         const toggleThemeButton = document.getElementById('toggleTheme');
         toggleThemeButton.addEventListener('click', () => {
@@ -220,7 +209,6 @@
             toggleThemeButton.textContent = isDarkMode ? 'Chế độ sáng' : 'Chế độ tối';
         });
 
-        // Cập nhật đồng hồ thời gian thực
         function updateClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
@@ -231,7 +219,6 @@
         setInterval(updateClock, 1000);
         updateClock();
 
-        // Cập nhật đồng hồ đếm ngược đến sinh nhật tiếp theo
         function updateCountdown() {
             const now = new Date();
             let nextBirthday = new Date(now.getFullYear(), 7, 10);
@@ -248,14 +235,12 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Chuyển đổi hình nền giữa ảnh 1 và ảnh 2
         let isImageOne = true;
         document.getElementById('toggleBackground').addEventListener('click', () => {
             document.body.style.backgroundImage = isImageOne ? "url('ảnh 2.jpg')" : "url('ảnh 1.jpg')";
             isImageOne = !isImageOne;
         });
 
-        // Bình luận
         document.getElementById('submitComment').addEventListener('click', () => {
             const commentInput = document.getElementById('commentInput');
             const commentsList = document.getElementById('commentsList');
@@ -267,7 +252,6 @@
             }
         });
 
-        // Tạo hiệu ứng hoa tuyết rơi
         function createSnowflake() {
             const snowflake = document.createElement('div');
             snowflake.className = 'snowflake';
@@ -277,7 +261,6 @@
             snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
             document.body.appendChild(snowflake);
 
-            // Xóa bông tuyết khi rơi xuống hết màn hình
             snowflake.addEventListener('animationend', () => {
                 snowflake.remove();
             });
